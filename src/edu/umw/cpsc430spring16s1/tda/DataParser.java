@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Hashtable;
 
 /**
  *Contains a program to take a csv filename as input
@@ -16,7 +17,25 @@ import java.util.Arrays;
 
 public class DataParser {
 
+    
+    
     public static void main(String args[]) {
+
+        Hashtable<String,String> deviceIds 
+            = new Hashtable<String,String>();
+
+
+        //temporarily hardcode the serials into an array
+        int[] serials = 
+            new int[]{1001871,1001872,1001873,1001874,441384,532797,532798,
+            532800,532801,533551,533560,555494,555497,555498,555501,555502,
+            555505,555506,625100,625102,695788,710736,710737,710738,710739,
+            733935,733936,733937,733938,733939,984395};
+
+        //make ht of serials
+        for (int i=0; i< serials.length; i++){
+            deviceIds.put(String.valueOf(serials[i]),String.valueOf(i+1));
+        }
 
         try{
 
